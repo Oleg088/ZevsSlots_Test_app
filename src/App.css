@@ -46,7 +46,7 @@ html {
 }
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: #ffffff;
+  background-color: transparent;
   transition: background-color 300ms;
   margin: 0;
   padding: 0;
@@ -111,11 +111,12 @@ body {
 .hidden {
   display: none;
 }
-/* .App {
+.App {
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
-} */
+  background: transparent;
+}
 .container {
   min-width: 320px;
   max-width: 390px;

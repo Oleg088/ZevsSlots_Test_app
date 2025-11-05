@@ -101,8 +101,11 @@ const Slots = ({ onWin }) => {
 
       window.setTimeout(() => {
         setIsStopping(false);
+        // Додаємо затримку перед відкриттям модалки для кращого UX
         if (onWin) {
-          onWin();
+          setTimeout(() => {
+            onWin();
+          }, 400); // Затримка 400ms після завершення анімації зупинки
         }
       }, STOP_ANIMATION_MS);
     }, SPIN_DURATION_MS);

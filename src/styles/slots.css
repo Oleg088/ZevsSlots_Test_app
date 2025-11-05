@@ -151,6 +151,9 @@
   height: 100%;
   overflow: hidden;
   box-sizing: border-box;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .symbol img {
@@ -198,6 +201,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  will-change: opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .win-popup-wrapper {
@@ -206,6 +213,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .win-badge {
@@ -230,6 +241,10 @@
   position: relative;
   overflow: visible;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .win-title {
@@ -238,6 +253,21 @@
   color: #ffbb04;
   letter-spacing: 0.5px;
   margin-top: 20px;
+  animation: winPulse 2s ease-in-out infinite;
+  text-shadow: 0 0 20px rgba(255, 187, 4, 0.8), 0 0 40px rgba(255, 187, 4, 0.4);
+}
+
+@keyframes winPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 20px rgba(255, 187, 4, 0.8),
+      0 0 40px rgba(255, 187, 4, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    text-shadow: 0 0 30px rgba(255, 187, 4, 1), 0 0 60px rgba(255, 187, 4, 0.6);
+  }
 }
 
 .win-percent {
@@ -295,4 +325,38 @@
 
 .cta-button:hover {
   box-shadow: 0 14px 28px rgba(255, 187, 4, 0.7);
+}
+
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10000;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  pointer-events: none;
+}
+
+.confetti-square {
+  border-radius: 2px;
+}
+
+.confetti-circle {
+  border-radius: 50%;
+}
+
+.confetti-triangle {
+  border-left: solid transparent;
+  border-right: solid transparent;
+  border-bottom-style: solid;
+  border-radius: 0;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  transform-origin: center bottom;
 }
