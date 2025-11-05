@@ -1,0 +1,23 @@
+.hero {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), transparent),
+    url(../assets/backgrounds/basegame.png);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  width: 100%;
+  position: relative;
+  padding-bottom: 150px;
+  overflow: hidden;
+}
+.zeus-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 29px;
+  margin-left: 30px;
+}
+.zeus-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

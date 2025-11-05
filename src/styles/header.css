@@ -1,0 +1,17 @@
+.container1 {
+  max-width: 206px;
+  margin-top: 5px;
+}
+.text {
+  padding: 12px;
+  margin-left: 5px;
+  font-weight: 700;
+  height: 20px;
+  background-color: #002778;
+  color: #ffbb04;
+  font-size: 26px;
+  line-height: 24px;
+}
+.highlight {
+  color: #f9fbff;
+}
